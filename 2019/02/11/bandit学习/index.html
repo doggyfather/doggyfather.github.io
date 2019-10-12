@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="D099y">
 <meta property="og:description" content="level0直接ssh登进去,cat readme,拿到bandit1的ssh密码:boJ9jbbUNNfktd78OOpsqOltutMc3MY1 level1ssh登陆进去提示是-开头的文件，针对这种特殊字符文件的操作，需要使用./，所以这题直接cat ./-即可，拿到bandit2的密码:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 level2有空格加个引号就可以了,用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-13T00:51:25.170Z">
+<meta property="og:updated_time" content="2019-06-04T02:07:58.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bandit学习">
 <meta name="twitter:description" content="level0直接ssh登进去,cat readme,拿到bandit1的ssh密码:boJ9jbbUNNfktd78OOpsqOltutMc3MY1 level1ssh登陆进去提示是-开头的文件，针对这种特殊字符文件的操作，需要使用./，所以这题直接cat ./-即可，拿到bandit2的密码:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 level2有空格加个引号就可以了,用">
@@ -340,7 +340,8 @@
 <h6 id="level8"><a href="#level8" class="headerlink" title="level8"></a>level8</h6><p>data.txt文件中只出现一次的那一行，去重sort data.txt |uniq -u,得到bandit9密码:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR</p>
 <h6 id="level9"><a href="#level9" class="headerlink" title="level9"></a>level9</h6><p>提示不可读字符中找出可读字符,用strings,strings data.txt,得到bandit10密码:truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk</p>
 <h6 id="level10"><a href="#level10" class="headerlink" title="level10"></a>level10</h6><p>提示是base64加密，cat data.txt|base64 -d解密得到bandit11密码:IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR</p>
-
+<h6 id="level11"><a href="#level11" class="headerlink" title="level11"></a>level11</h6><p>这里涉及到一个非常古老的置换密码算法 ROT13，简单来说就是把原字母用它13位之后对应的字母代替，超过时则重新绕回26英文字母开头。A换成N、B换成O、依此类推到M换成Z，然后序列反转：N换成A、O换成B、最后Z换成M。cat data.txt|tr ‘a-zA-Z’ ‘n-za-mN-ZA-M’得到bandit12密码:5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu</p>
+<h6 id="level12"><a href="#level12" class="headerlink" title="level12"></a>level12</h6>
       
     </div>
     
@@ -373,6 +374,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/12/任意手机号注册/" rel="prev" title="任意手机号注册">
+                任意手机号注册 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -449,7 +454,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -486,7 +491,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#level0"><span class="nav-number">1.</span> <span class="nav-text">level0</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level1"><span class="nav-number">2.</span> <span class="nav-text">level1</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level2"><span class="nav-number">3.</span> <span class="nav-text">level2</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level3"><span class="nav-number">4.</span> <span class="nav-text">level3</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level4"><span class="nav-number">5.</span> <span class="nav-text">level4</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level5"><span class="nav-number">6.</span> <span class="nav-text">level5</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level6"><span class="nav-number">7.</span> <span class="nav-text">level6</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level7"><span class="nav-number">8.</span> <span class="nav-text">level7</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level8"><span class="nav-number">9.</span> <span class="nav-text">level8</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level9"><span class="nav-number">10.</span> <span class="nav-text">level9</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level10"><span class="nav-number">11.</span> <span class="nav-text">level10</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#level0"><span class="nav-number">1.</span> <span class="nav-text">level0</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level1"><span class="nav-number">2.</span> <span class="nav-text">level1</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level2"><span class="nav-number">3.</span> <span class="nav-text">level2</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level3"><span class="nav-number">4.</span> <span class="nav-text">level3</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level4"><span class="nav-number">5.</span> <span class="nav-text">level4</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level5"><span class="nav-number">6.</span> <span class="nav-text">level5</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level6"><span class="nav-number">7.</span> <span class="nav-text">level6</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level7"><span class="nav-number">8.</span> <span class="nav-text">level7</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level8"><span class="nav-number">9.</span> <span class="nav-text">level8</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level9"><span class="nav-number">10.</span> <span class="nav-text">level9</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level10"><span class="nav-number">11.</span> <span class="nav-text">level10</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level11"><span class="nav-number">12.</span> <span class="nav-text">level11</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#level12"><span class="nav-number">13.</span> <span class="nav-text">level12</span></a></li></ol></div>
             
 
           </div>
